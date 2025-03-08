@@ -1,5 +1,7 @@
 import { Header } from "antd/es/layout/layout";
-import { Button, Flex, Typography } from "antd";
+import { Button, Flex, Typography, Drawer } from "antd";
+import { useState } from "react";
+import AddVacancyForm from "../components/AddVacancyForm";
 
 const headerStyle: React.CSSProperties = {
   width: "100%",
@@ -13,6 +15,8 @@ const headerStyle: React.CSSProperties = {
 };
 
 const AppHeader: React.FC = () => {
+  const [drawer, setDrawer] = useState<boolean>(false);
+
   return (
     <Header style={headerStyle}>
       <Flex vertical gap="0" align="flex-start">
@@ -26,9 +30,18 @@ const AppHeader: React.FC = () => {
           Senior Frontend engineer
         </Typography.Title>
       </Flex>
-      <Button type='primary'>
+      <Button type="primary" onClick={() => setDrawer(true)}>
         Add Job Vacancy
       </Button>
+      <Drawer
+        width={600}
+        title="Add vacancy"
+        onClose={() => setDrawer(false)}
+        open={drawer}
+        destroyOnClose
+      >
+        <AddVacancyForm onClose={() => setDrawer(false)}/>
+      </Drawer>
     </Header>
   );
 };

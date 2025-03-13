@@ -15,13 +15,13 @@ const headerStyle: React.CSSProperties = {
 };
 
 const AppHeader: React.FC = () => {
-  const [drawer, setDrawer] = useState<boolean>(false);
+  const [drawer, setDrawer] = useState<boolean>(true);
 
   return (
     <Header style={headerStyle}>
       <Flex vertical gap="0" align="flex-start">
         <Typography.Title level={2} style={{ margin: 0 }}>
-          Olena Paschenko
+          Olena Pashchenko
         </Typography.Title>
         <Typography.Title
           level={5}

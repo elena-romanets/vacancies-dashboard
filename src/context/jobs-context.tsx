@@ -38,14 +38,11 @@ export function JobsContextProvider({ children }: JobsContextProviderProps) {
       const { data }: any = await fakeFetchJobs();
       setJobs(data);
       setLoading(false);
-
-      console.log("data", data);
     }
 
     preload();
   }, []);
 
-  console.log("jobs", jobs);
   return (
     <JobsContext.Provider value={{ loading, jobs }}>
       {children}

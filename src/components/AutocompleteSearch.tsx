@@ -10,11 +10,6 @@ export default function AutocompleteSearch({
 }): AutocompleteSearchProps {
 
   return (
-    // <input
-    //   type="text"
-    //   onChange={(e) => onChange(e.target.value)}
-    //   placeholder="Input search company name"
-    // />
     <Search
       style={{ marginBottom: "20px", width: 'calc(80vw - 20px)'}}
       size='large'
